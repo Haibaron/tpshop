@@ -4,8 +4,8 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
         <title>会员列表</title>
-
-        <link href="/baron/tpshop/Application/Admin/View/Goods/css/mine.css" type="text/css" rel="stylesheet" />
+        	<link rel="stylesheet" type="text/css" href="/tpshop/Public/Admin/lightbox/css/lightbox.css">
+        <link href="/tpshop/Application/Admin/View/Goods/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -15,7 +15,7 @@
             <span>
                 <span style="float: left;">当前位置是：商品管理-》商品列表</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="/baron/tpshop/index.php/Admin/Goods/add">【添加商品】</a>
+                    <a style="text-decoration: none;" href="/tpshop/index.php/Admin/Goods/add">【添加商品】</a>
                 </span>
             </span>
         </div>
@@ -51,10 +51,9 @@
                         <td><?=$val['goods_number'] ?></td>
                         <td><?=$val['goods_price'] ?></td>
                         
-                        <td><a href="<?php echo $viewPath.$val['goods_img']?>" data-lightbox="light" data-title="<?=$val['goods_name'] ?>" ><img src="<?php echo $viewPath.$val['goods_thumb']?>" height="40" width="40"></a></td>
+                        <td><a href="<?php echo $viewPath.$val['goods_img']?>" data-lightbox="light" data-title="<?=$val['goods_name'] ?>" ><img src="<?php echo $viewPath.$val['goods_thumb']?>" ></a></td>
                        
-                        <td>2012-10-18 17:40:34</td>
-                        <td><a href="#">修改</a></td>
+                        <td><?=date("Y-m-d H:i:s", $val['create_time'] )?></td>
                         <td>    操作：<a href="<?=U('edit',array('id'=>$val['id']))?>">编辑</a>
                   <a href="<?=U('del',array('id'=>$val['id']))?>" onclick="return confirm('确定删除么？？')">删除</a></td>
                     </tr>
@@ -69,6 +68,6 @@
             </table>
         </div>
     </body>
-    <script type="text/javascript" src="/baron/tpshop/Public/Admin/lightbox/js/jquery-1.10.1.js"></script>
-<script type="text/javascript" src="/baron/tpshop/Public/Admin/lightbox/js/lightbox.js"></script>
+    <script type="text/javascript" src="/tpshop/Public/Admin/lightbox/js/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="/tpshop/Public/Admin/lightbox/js/lightbox.js"></script>
 </html>

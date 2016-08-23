@@ -1,15 +1,15 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class TypeController extends Controller {
+class AttributeController extends Controller {
   public function getlst(){
-      $sql=M('Type')->select();
+      $sql=M('Attribute')->select();
       $data=$this->assign('data',$sql);
       $this->display();
   }
   public function add(){
      if(IS_POST){
-     	$type=D('Type');
+     	$type=D('Attribute');
      
      	if($type->create()){
      	
@@ -22,11 +22,14 @@ class TypeController extends Controller {
      		}
      	} 
       }
+      $type=D('Type')
+      $data=$type->select();
+      $this->assign('data',$data);
        $this->display();
    }
      public function edit(){
       
-      $types=D('Type');
+      $types=M('Attribute');
       if(IS_POST){
         if($types->create()){  //要将ID 的值传入表单给create方法
          /* var_dump($types->create());
@@ -55,11 +58,11 @@ class TypeController extends Controller {
 
     public function del(){
       $id=I('get.id');
-      $model=M('Type');
+      $model=M('Attribute');
        $res=$model->delete($id);
        if($res){
           $this->success('删除成功',1,U('getlst'));
-          $this->redirect('Type/getlst');
+          $this->redirect('Attribute/getlst');
           exit();
        }else{
          $this->error('删除失败');
