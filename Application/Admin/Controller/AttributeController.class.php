@@ -8,8 +8,9 @@ class AttributeController extends Controller {
       $this->display();
   }
   public function add(){
-     $type=D('Attribute');
      if(IS_POST){
+     	$type=D('Attribute');
+     
      	if($type->create()){
      	
      		if($type->add()){
@@ -21,8 +22,8 @@ class AttributeController extends Controller {
      		}
      	} 
       }
-     
-      //$data=$type->select();
+      $type=D('Type')
+      $data=$type->select();
       $this->assign('data',$data);
        $this->display();
    }
