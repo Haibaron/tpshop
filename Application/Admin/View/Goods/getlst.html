@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-        <title>会员列表</title>
+        <title>商品列表</title>
         	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/lightbox/css/lightbox.css">
         <link href="__ROOT__/Application/Admin/View/Goods/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
@@ -46,7 +46,7 @@
                     </tr>
                   <?php foreach($data as $val){ ?>
                     <tr id="product1">
-                        <td>1</td>
+                        <td><?=$val['id'] ?></td>
                         <td><a href="#"><?=$val['goods_name'] ?></a></td>
                         <td><?=$val['goods_number'] ?></td>
                         <td><?=$val['goods_price'] ?></td>
